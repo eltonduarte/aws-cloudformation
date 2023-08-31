@@ -1,0 +1,18 @@
+# Exemplo simples do CloudFormation
+
+## Bucket
+Resources:
+  MinhasBuckets:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: PublicRead
+      BucketName: "bucket-teste"
+
+## EC2 Server: Linux, t2micro
+Resources:
+  WebServers: 
+    Type: AWS::EC2::Instance 
+    Properties:
+      AvailabilityZone: us-east-2a 
+      ImageId: ami-02bcbb802e03574ba 
+      InstanceType: t2.micro 
